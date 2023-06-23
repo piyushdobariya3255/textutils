@@ -4,12 +4,11 @@ import './App.css';
 import About from './components/About';
 import { useState } from 'react';
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route
+// } from "react-router-dom";
 
 
 
@@ -27,13 +26,13 @@ function App(props) {
     }, 2000)
   }
 
-  const removeclass = () => {
-    document.body.classList.remove('bg-light')
-    document.body.classList.remove('bg-primary')
-    document.body.classList.remove('bg-success')
-    document.body.classList.remove('bg-danger')
-    document.body.classList.remove('bg-warning')
-  }
+  // const removeclass = () => {
+  //   document.body.classList.remove('bg-light')
+  //   document.body.classList.remove('bg-primary')
+  //   document.body.classList.remove('bg-success')
+  //   document.body.classList.remove('bg-danger')
+  //   document.body.classList.remove('bg-warning')
+  // }
 
 
   const toggleMode = (cls) => {
@@ -59,27 +58,27 @@ function App(props) {
   }
   return (
     <>
-      <Router>
+      {/* <Router> */}
 
         <Navbar title="textutile" abouttext="about" mode={mode} toggleMode={toggleMode} />
         {/* <Navbar/> */}
         <Alert alert={alert} />
 
         <div className="container my-3">
-          <Switch>
-            <Route exact path="/About">
-              <About />
-            </Route>
+          {/* <Switch> */}
+            {/* <Route exact path="/About"> */}
+              {/* <About /> */}
+            {/* </Route> */}
 
-            <Route exact path="/">
+            {/* <Route exact path="/"> */}
               <TextForm showAlert={showAlert} heading='enter the text to analyes' style={{ backgroundColor: props.mode === 'dark' ? 'black' : 'white' }} id="fom" mode={mode} />
 
-            </Route>
-          </Switch>
+            {/* </Route> */}
+          {/* </Switch> */}
 
           {/* <About/> */}
         </div>
-      </Router>
+      {/* </Router> */}
 
     </>
   );
