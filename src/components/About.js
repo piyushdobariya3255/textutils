@@ -1,32 +1,39 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export default function About() {
+export default function About(props) {
 
-const [myStyle , setmyStyle] = useState({
-    color : 'white',
-    backgroundColor : 'black'
-})
+  let myStyle = {
+    color :props.mode === 'dark'?'white':'black',
+    backgroundColor :props.mode ===  'dark'?'black':'white',
+    // border:'2px solid',
+    // borderColor:props.mode === 'dark'?'white':'black'
+  }
 
-const [btntext,setbtnText] = useState("enable dark mode")
+// const [myStyle , setmyStyle] = useState({
+//     color : 'white',
+//     backgroundColor : 'black'
+// })
+
+// const [btntext,setbtnText] = useState("enable dark mode")
 
 
-  const  togglestyle = () =>{
-        if(myStyle.color == 'black'){
-            setmyStyle({
-                color : 'white',
-                backgroundColor : 'black',
-                border : '2px solid white'
-            })
-            setbtnText("enable light mode")
-        }
-        else{
-            setmyStyle({
-                color : 'black',
-                backgroundColor : 'white'
-            })
-            setbtnText("enable dark mode")
-        }
-    }
+  // const  togglestyle = () =>{
+  //       if(myStyle.color === 'black'){
+  //           setmyStyle({
+  //               color : 'white',
+  //               backgroundColor : 'black',
+  //               border : '2px solid white'
+  //           })
+  //           setbtnText("enable light mode")
+  //       }
+  //       else{
+  //           setmyStyle({
+  //               color : 'black',
+  //               backgroundColor : 'white'
+  //           })
+  //           setbtnText("enable dark mode")
+  //       }
+  //   }
    
   return (
     <div className="container my-3" style={myStyle} >
@@ -35,7 +42,7 @@ const [btntext,setbtnText] = useState("enable dark mode")
   <div className="accordion-item">
     <h2 className="accordion-header" id="flush-headingOne">
       <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        Accordion Item #1
+        Aanalyze your text
       </button>
     </h2>
     <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -45,7 +52,7 @@ const [btntext,setbtnText] = useState("enable dark mode")
   <div className="accordion-item">
     <h2 className="accordion-header" id="flush-headingTwo">
       <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        Accordion Item #2
+        Free to use
       </button>
     </h2>
     <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
@@ -55,7 +62,7 @@ const [btntext,setbtnText] = useState("enable dark mode")
   <div className="accordion-item">
     <h2 className="accordion-header" id="flush-headingThree">
       <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-        Accordion Item #3
+        browser compatible
       </button>
     </h2>
     <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -63,8 +70,8 @@ const [btntext,setbtnText] = useState("enable dark mode")
     </div>
   </div>
 </div>
-<div className="container m-2"></div>
-<button onClick={togglestyle} className='btn btn-primary'>{btntext}</button>
+{/* <div className="container m-2"></div> */}
+{/* <button onClick={togglestyle} className='btn btn-primary'>{btntext}</button> */}
     </div>
   )
 }
