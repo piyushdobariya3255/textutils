@@ -5,7 +5,7 @@ import About from './components/About';
 import { useState } from 'react';
 import Alert from './components/Alert';
 import {
-  BrowserRouter as Router,
+  BrowserRouter as Router,   //// react router dom search w3 school
   Switch,
   Route
 } from "react-router-dom";
